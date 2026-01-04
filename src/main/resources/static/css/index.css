@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* SPLASH SCREEN */
+#splash {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1.6s ease, visibility 1.0s ease;
+}
+
+.splash-content {
+    text-align: center;
+    color: white;
+}
+
+.splash-content h1 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* LOADER (YouTube-like subtle pulse) */
+.medical-plus {
+    font-size: 108px;
+    font-weight: 700;
+    color: white;
+    margin-top: 20px;
+    animation: pulse 1.4s ease-in-out infinite;
+}
+
+/* Subtle pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+}
+
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* MAIN PAGE */
+#main-content {
+    height: 100vh;
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.8s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    text-align: center;
+    max-width: 520px;
+    padding: 20px;
+}
+
+.container h1 {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #e3f2fd;
+    margin-bottom: 40px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    min-width: 160px;
+    padding: 14px 0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Buttons */
+.btn.primary {
+    background: white;
+    color: #1976d2;
+}
+
+.btn.primary:hover {
+    background: #e3f2fd;
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+}
+
+.btn.secondary:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+}

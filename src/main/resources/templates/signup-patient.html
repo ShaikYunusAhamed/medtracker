@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Signup | MedTracker</title>
+    <link rel="stylesheet" href="/css/signup-patient.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Patient Sign Up</h2>
+    <p class="subtitle">Verify your email to continue</p>
+
+    <!-- STEP 1: EMAIL -->
+    <div id="email-step">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Enter your Gmail" required>
+
+        <button onclick="sendOtp()">Send OTP</button>
+    </div>
+
+    <!-- STEP 2: OTP -->
+    <div id="otp-step" class="hidden">
+        <label>Enter OTP</label>
+        <input type="text" id="otpInput" placeholder="6-digit OTP">
+        <button onclick="verifyOtp()">Verify OTP</button>
+    </div>
+
+    <!-- STEP 3: FULL FORM -->
+    <div id="details-step" class="hidden">
+        <hr>
+
+        <label>Full Name</label>
+        <input type="text" placeholder="Your full name">
+
+        <label>Date of Birth</label>
+        <input type="date">
+
+        <label>Gender</label>
+        <select>
+            <option>Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label>Mobile Number</label>
+        <input type="tel" placeholder="10-digit mobile number">
+
+        <label>Password</label>
+        <input type="password" placeholder="Create password">
+
+        <label>Confirm Password</label>
+        <input type="password" placeholder="Confirm password">
+
+        <button class="primary">Create Account</button>
+    </div>
+</div>
+
+<script>
+    let generatedOtp;
+
+    function sendOtp() {
+        const email = document.getElementById("email").value;
+        if (!email) {
+            alert("Please enter email");
+            return;
+        }
+
+        // Generate fake OTP (for UI demo)
+        generatedOtp = Math.floor(100000 + Math.random() * 900000);
+        alert("OTP (demo): " + generatedOtp);
+
+        document.getElementById("otp-step").classList.remove("hidden");
+    }
+
+    function verifyOtp() {
+        const userOtp = document.getElementById("otpInput").value;
+
+        if (userOtp == generatedOtp) {
+            document.getElementById("details-step").classList.remove("hidden");
+            document.getElementById("otp-step").classList.add("hidden");
+            document.getElementById("email-step").classList.add("hidden");
+        } else {
+            alert("Invalid OTP");
+        }
+    }
+</script>
+
+</body>
+</html>

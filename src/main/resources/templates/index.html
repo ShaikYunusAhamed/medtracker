@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedTracker</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+<!-- SPLASH SCREEN -->
+<div id="splash">
+    <div class="splash-content">
+        <h1>MedTracker</h1>
+        <div class="medical-plus">+</div>
+
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content" class="hidden">
+    <div class="container">
+        <h1>Welcome to MedTracker</h1>
+        <p class="subtitle">Smart medication tracking for better healthcare</p>
+
+        <div class="button-group">
+            <a href="/select-role/login" class="btn primary">Login</a>
+            <a href="/select-role/signup" class="btn secondary">Sign Up</a>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // splash timing
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            document.getElementById("splash").classList.add("fade-out");
+            document.getElementById("main-content").classList.remove("hidden");
+        }, 1200);
+    });
+</script>
+
+</body>
+</html>
